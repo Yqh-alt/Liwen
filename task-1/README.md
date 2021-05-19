@@ -153,9 +153,13 @@ print(a)
 
 1. $ git clone +仓库地址  #将出现以仓库名命名的新文件夹，假设为test（克隆）![仓库地址由来](C:\Users\15599\AppData\Roaming\Typora\typora-user-images\image-20210518230236428.png)
 2. #将要上传的文件复制到test文件夹下 再 cd test
-3. $ git add . #.表示添加全部，也可git add my.text添加单个文件或文件夹
-4. $ git commit -m "备注信息"  #将改动提交到github仓库
-5. $ git push -u origin master   #首次关联本地master分支与github仓库的master分支需要-u,之后推送和拉取不用
+3. git branch -a查看所有分支以及当前所指分支
+4. git checkout +分支名 指到到该分支
+5. git add . #.表示添加全部，也可git add my.text添加单个文件或文件夹，git add -A 同步所有变化
+6. git commit -m "备注信息"  #将改动提交到github仓库
+7. git push -u origin master   #首次关联本地master分支与github仓库的master分支需要-u,之后推送和拉取不用
+8. 之后就直接用git push即可
+9. ![git分支的一些操作](C:\Users\15599\AppData\Roaming\Typora\typora-user-images\image-20210519131150453.png)
 
 # ==*github操作*==
 
@@ -171,4 +175,7 @@ https://用户名.github.io
 
 1. 创建个人站点  ->   新建仓库 （注：仓库名必须是[用户名.github.io]）
 2. 在仓库下新建index.html的文件即可
+3. 之后就写代码
+
+# ==*PS笔记*==
 
