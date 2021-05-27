@@ -1,4 +1,14 @@
 1.github的使用:
+在 IDE 中，如果在函数调用的地方停留光标，可能会提示对应的函数定义，在 GitHub 中也是如此，对于一些仓库来说，我们可以直接查看对应的函数定义了，只需点击函数的调用位置即可。创建 React 项目
+使用 create-react-app 初始化一个 React 应用：
+
+$ npx create-react-app github-actions-demo
+$ cd github-actions-demo
+在项目的 package.json 中，添加一个 homepage 字段（表示该应用发布后的根目录）
+
+"homepage": "https://jack-cool.github.io/github-actions-demo"
+创建 workflow 文件
+在项目的 .github/workflows 目录，创建一个 workflow 文件，这里用的是 ci.yml 。
 2.Typora的使用：
 A.Typora 默认使用的是 GitHub 主题，你可以点击菜单栏/主题 进行切换。B.快捷键 F8 打开专注模式，编辑器会高亮显示当前正在编辑的段落，让你更加专注于当前内容，不受视觉干扰。C.快捷键 F9 打开打字机模式，当前正在编辑的段落会居中显示。D.:<emoji>: 语法支持使用 Emoji 小表情，Typora 提供一个很好的提示功能，输入:表情名称 可以触发提示 。
  E.快捷键：Ctrl+1  一阶标题    Ctrl+B  字体加粗
