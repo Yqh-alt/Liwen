@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(70deg, #00BBff, pink);
+        }
+        
+        .box {
+            width: 400px;
+            height: 200px;
+            background: linear-gradient(70deg, #00BBff, pink);
+            display: none;
+            margin: 0 auto;
+            left: 640px;
+            position: absolute;
+            border: 1px solid yellow;
+            z-index: 5;
+        }
+        
+        .boxs {
+            width: 400px;
+            height: 200px;
+            background: linear-gradient(70deg, #00BBff, pink);
+            display: none;
+            margin: 0 auto;
+            left: 640px;
+            position: absolute;
+            border: 1px solid yellow;
+            z-index: 5;
+        }
+        
+        .tops {
+            position: fixed;
+            top: 100px;
+            right: 200px;
+            font-style: italic;
+            font-family: "宋体";
+            overflow: hidden;
+            font-size: 1.2rem;
+            font-style: oblique;
+            text-align: left;
+            line-height: 3rem;
+            background-image: -webkit-linear-gradient(left, green, yellow, pink, blue, red 25%, green 35%, blue 50%, yellow 60%, red 75%, pink 85%, blue 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: stream 15s infinite linear;
+            background-size: 200% 100%;
+            background-clip: text;
+            font-size: 70px;
+        }
+        
+        .bg {
+            background-color: pink;
+        }
+        
+        .bgs {
+            background-color: pink;
+        }
+        
+        .bg1 {
+            background-color: green;
+        }
+        
+        .bg1s {
+            background-color: green;
+        }
+        
+        .bg2 {
+            background-color: blue;
+        }
+        
+        .btn {
+            background-color: red;
+            margin-left: 213px;
+        }
+        
+        .btns {
+            background-color: red;
+            margin-left: 143px;
+        }
+        
+        .result {
+            cursor: pointer;
+            font: size 12px;
+            color: black;
+        }
+        
+        .results {
+            cursor: pointer;
+            font: size 12px;
+            color: red;
+        }
+        
+        h3 {
+            margin-left: 10px;
+            cursor: move;
+            background-image: linear-gradient(#e66465, #9198e5);
+        }
+        
+        table {
+            border: 5px solid greenyellow;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        
+        .fs {
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            color: pink;
+        }
+        
+        #web_bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            min-width: 1000px;
+            z-index: -10;
+            zoom: 1;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+        
+        h2 {
+            margin-left: 10px;
+            cursor: move;
+            background-image: linear-gradient(to bottom right, red, yellow);
+        }
+        
+        .yel {
+            background-image: linear-gradient(to bottom right, red, yellow);
+        }
+        
+        .yels {
+            background-image: linear-gradient(#e66465, #9198e5);
+        }
+        
+        .top {
+            overflow: hidden;
+            font-size: 1.2rem;
+            font-style: oblique;
+            text-align: left;
+            line-height: 3rem;
+            background-image: -webkit-linear-gradient(left, green, yellow, pink, blue, red 25%, green 35%, blue 50%, yellow 60%, red 75%, pink 85%, blue 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: stream 15s infinite linear;
+            background-size: 200% 100%;
+            background-clip: text;
+            font-size: 60px;
+            position: fixed;
+            top: 100px;
+            left: 160px;
+        }
+        
+        @keyframes stream {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="web_bg" style="background-image: url(https://yqh-alt.oss-cn-beijing.aliyuncs.com/20210725175244.png);"></div>
+    <table>
+        <thead>
+            <tr>
+                <th class='result'>登录</th>
+                <th>||</th>
+                <th class='results'>注册</th>
+            </tr>
+        </thead>
+    </table>
+    <h1 class="tops">moods</h1>
+    <div class="box">
+        <h3>登录框</h3>
+        <div>邮箱：<input type="text" value="请输入邮箱" class='bg'></div>
+        <div>密码：<input type="text" value="请输入密码" class='bg1'></div>
+        <div>验证码:<input type="text" value="请输入短信验证码" class='bg2'></div>
+        <div><button class="fs">点击发送验证码</button></div>
+        <button class="yels">登录</button>
+        <button class="btn">关闭</button>
+    </div>
+    <div class="boxs">
+        <h2>注册框</h2>
+        <div>邮箱：<input type="text" value="请输入邮箱" class='bgs'></div>
+        <div>密码：<input type="text" value="请输入密码" class='bg1s'></div>
+        <button class="yel">注册</button>
+        <button class="btns">关闭</button>
+    </div>
+    <div class='top'>welcome to MOODS</div>
+    <script>
+        var bg = document.querySelector('.bg');
+        var bg1 = document.querySelector('.bg1');
+        var bg2 = document.querySelector('.bg2');
+        var h = document.querySelector('.result');
+        var doc = document.querySelector('.btn');
+        var timer = document.querySelector('.box');
+        var title = document.querySelector('h3');
+        var timers = document.querySelector('.fs');
+        var timer2 = document.querySelector('.results');
+        var timer3 = document.querySelector('.boxs');
+        var h2 = document.querySelector('h2');
+        var bgs = document.querySelector('.bgs');
+        var bg1s = document.querySelector('.bg1s');
+        var btns = document.querySelector('.btns');
+        var yel = document.querySelector('.yel');
+        var times = 10;
+        var flag = 1;
+        var verse = 1;
+        var flags = 1;
+        var zflag = 1;
+        var zverse = 1;
+        h.addEventListener('click', function() {
+            timer.style.display = 'block';
+            timer3.style.display = 'none';
+            document.getElementById('web_bg').style.backgroundImage = 'url(https://yqh-alt.oss-cn-beijing.aliyuncs.com/20210725175244.png)';
+            bgs.value = '请输入邮箱';
+            bg1s.value = '请输入密码';
+            zflag = 1;
+            zverse = 1;
+            timer3.style.left = 1040 + 'px';
+            timer3.style.top = 354.48 + 'px';
+        })
+
+        bg.addEventListener('click', function() {
+            if (flag == 1) {
+                bg.value = '';
+                flag = 0;
+            }
+        })
+        bg1.addEventListener('click', function() {
+            if (verse === 1) {
+                bg1.value = '';
+                verse = 0;
+            }
+        })
+        bg2.addEventListener('click', function() {
+            if (flags === 1) {
+                bg2.value = '';
+                flags = 0;
+            }
+        })
+        bgs.addEventListener('click', function() {
+            if (zflag == 1) {
+                bgs.value = '';
+                zflag = 0;
+            }
+        })
+        bg1s.addEventListener('click', function() {
+            if (zverse === 1) {
+                bg1s.value = '';
+                zverse = 0;
+            }
+        })
+
+        function count() {
+            timer.style.display = 'none';
+            bg.value = '请输入邮箱';
+            bg1.value = '请输入密码';
+            bg2.value = '请输入短信验证码';
+            flag = 1;
+            verse = 1;
+            flags = 1;
+            timer.style.left = 1040 + 'px';
+            timer.style.top = 354.48 + 'px';
+        }
+        count();
+        doc.addEventListener('click', count);
+
+        function counts() {
+            timer3.style.display = 'none';
+            bgs.value = '请输入邮箱';
+            bg1s.value = '请输入密码';
+            zflag = 1;
+            zverse = 1;
+            timer3.style.left = 1040 + 'px';
+            timer3.style.top = 354.48 + 'px';
+            bgs.style.backgroundColor = 'pink';
+            bg1s.style.backgroundColor = 'green';
+        }
+        counts();
+        btns.addEventListener('click', counts);
+        h2.addEventListener('mousedown', function(e) {
+            var x = e.pageX - timer3.offsetLeft;
+            var y = e.pageY - timer3.offsetTop;
+            document.addEventListener('mousemove', move)
+
+            function move(e) {
+                timer3.style.left = e.pageX - x + 'px';
+                timer3.style.top = e.pageY - y + 'px';
+            }
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', move);
+            })
+        })
+        title.addEventListener('mousedown', function(e) {
+            var x = e.pageX - timer.offsetLeft;
+            var y = e.pageY - timer.offsetTop;
+            document.addEventListener('mousemove', move)
+
+            function move(e) {
+                timer.style.left = e.pageX - x + 'px';
+                timer.style.top = e.pageY - y + 'px';
+            }
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', move);
+            })
+        })
+        timers.addEventListener('click', function() {
+            timers.disabled = true;
+            timeset = setInterval(function() {
+                if (times == 0) {
+                    timers.disabled = false;
+                    times = 10;
+                    timers.innerHTML = '点击发送验证码';
+                    clearInterval(timeset);
+                } else {
+                    timers.innerHTML = '还剩下' + times + '秒';
+                    times--;
+                }
+            }, 1000);
+        })
+        timer2.addEventListener('click', function() {
+            document.getElementById('web_bg').style.backgroundImage = 'url(https://yqh-alt.oss-cn-beijing.aliyuncs.com/20210725175251.png)';
+            timer3.style.display = 'block';
+            timer.style.display = 'none';
+            bg.value = '请输入邮箱';
+            bg1.value = '请输入密码';
+            bg2.value = '请输入短信验证码';
+            flag = 1;
+            verse = 1;
+            flags = 1;
+            timer.style.left = 1040 + 'px';
+            timer.style.top = 354.48 + 'px';
+        })
+
+        yel.addEventListener('click', function() {
+            var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象
+            // 发送请求:
+            request.open('GET', 'http://47.98.192.167:8800/is_repeat?nick_name=yqh&tel=133');
+            request.send();
+            alert('请求已发送，请等待响应...');
+            request.onreadystatechange = function() { // 状态发生变化时，函数被回调
+                if (request.readyState === 4) { // 成功完成
+                    // 判断响应结果:
+                    if (request.status >= 200 && request.status < 300) {
+                        // 成功，通过responseText拿到响应的文本:
+                        return success(request.responseText);
+                    } else {
+                        // 失败，根据响应码判断失败原因:
+                        return fail(request.status);
+                    }
+                } else {
+                    // HTTP请求还在继续...
+                }
+            }
+        })
+
+        function success(text) {
+            var datas = eval("(" + text + ")");
+            var god = 0;
+            var res = new Array();
+            res = Object.keys(datas.data);
+            if (bgs.value == res[0]) {
+                god = god + 1;
+            }
+            if (bg1s.value == res[1]) {
+                god = god + 2;
+            }
+            if (bgs.value === '' && bg1s.value === '') {
+                god = god + 4;
+            }
+            switch (god) {
+                case 0:
+                    bgs.style.backgroundColor = '#00BBff';
+                    bg1s.style.backgroundColor = '#00BBff';
+                    alert("注册成功");
+                    break;
+                case 1:
+                    alert("邮箱重复");
+                    break;
+                case 2:
+                    alert("密码重复");
+                    break;
+                case 3:
+                    alert("密码与邮箱均重复");
+                    break;
+                case 4:
+                    alert("密码与邮箱均为空");
+                    break;
+                default:
+                    alert("出错了");
+            }
+        }
+
+        function fail(code) {
+            bgs.value = 'Error code: ' + code;
+            bgs.style.backgroundColor = 'pink';
+            bg1s.value = 'Error code: ' + code;
+            bg1s.style.backgroundColor = 'pink';
+        }
+    </script>
+</body>
+
+</html>
