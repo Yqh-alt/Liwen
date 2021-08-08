@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <img :src='image[index]'>
+        <a href=' javascript:void(0) ' @click='pre ' v-show='index!=0'>上一张</a>
+        <a href='javascript:void(0) ' @click='vie ' v-show='index<image.length-1'>下一张</a>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app ',
+            data: {
+                image: ['jlt1.jpg ', 'jlt2.jpg ', 'jlt3.jpg ', 'jlt4.jpg ', 'jlt5.jpg ', 'jlt6.jpg ', 'jlt7.jpg '],
+                index: 0
+            },
+            methods: {
+                pre() {
+                    this.index = this.index - 1
+                },
+                vie() {
+                    this.index = this.index + 1
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

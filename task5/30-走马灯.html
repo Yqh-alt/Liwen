@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type='button' value="浪起来" @click="lang">
+        <input type="button" value="低调" @click='stop'>
+        <h4 v-text="msg"></h4>
+        <div @click.capture="mbg">
+            <div @click.capture="mcg">
+                <input type="button" value="可以" @click.capture='mag'>
+            </div>
+        </div>
+    </div>
+    <script>
+        //事件修饰符 v-stop:阻止冒泡 v-prevent:阻止默认事件 v-self:只会触发自己范围内的事件，不包含子元素 v-capture:与事件冒泡的方向相反，事件捕获由外到内 v-once：仅触发一次事件，事件修饰符可以相互叠加
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "猥琐发育，别浪@^@",
+                count: null
+                    //count定义在data里面可以保持全局通用
+            },
+            methods: {
+                lang() {
+                    //箭头函数使内外部的this指向保持一致
+                    this.count = setInterval(() => {
+                        var start = this.msg.substring(0, 1)
+                        var end = this.msg.substring(1)
+                        this.msg = end + start
+                    }, 400)
+                },
+                stop() {
+                    clearInterval(this.count)
+                    this.count = null
+                },
+                mag() {
+                    console.log('最里层盒子被触发')
+                },
+                mcg() {
+                    console.log('中间盒子')
+                },
+                mbg() {
+                    console.log('外层盒子')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

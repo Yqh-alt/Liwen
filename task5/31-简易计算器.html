@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <input type='text' v-model='mag'>
+        <select v-model='gm'> 
+            <option value='+'>+</option>
+            <option value='-'>-</option>
+            <option value='*'>*</option>
+            <option value='/'>/</option>
+         </select>
+        <input type='text' v-model='mbg'>
+        <input type='button' value='=' @click='mg'>
+        <input type='text' v-model='mcg'>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                mag: 0,
+                mbg: 0,
+                mcg: 0,
+                gm: '+'
+            },
+            methods: {
+                mg() {
+                    var codestr = 'parseInt(this.mag)' + this.gm + 'parseInt(this.mbg)'
+                    this.mcg = eval(codestr)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
